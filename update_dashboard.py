@@ -15,7 +15,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 print("Downloading Market Data...")
 tickers = fdr.StockListing(MARKET)["Code"].tolist()
 prices_dict = {}
-for t in tqdm(tickers[:150], desc="KOSPI Download"):
+for t in tqdm(tickers, desc="KOSPI Download"):
     try:
         df = fdr.DataReader(t, START_DATE)
         if not df.empty: prices_dict[t] = df["Close"]
