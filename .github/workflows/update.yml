@@ -24,7 +24,7 @@ jobs:
       - name: Run Update Script
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python your_script_name.py
+        run: python update_dashboard.py
 
       - name: Commit and Push
         run: |
